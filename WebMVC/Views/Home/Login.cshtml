@@ -1,0 +1,15 @@
+﻿@{
+	ViewData["Title"] = "Login";
+}
+<h1>@ViewData["Title"]</h1>
+@if(!string.IsNullOrEmpty(Context.Request.Query["ReturnUrl"]))
+{
+	<p>You must login to access <b>@Context.Request.Query["ReturnUrl"]</b></p>
+}
+<form action="/Home/Login" method="post">
+	@Html.AntiForgeryToken()
+	<input type="email" placeholder="EMAIL" name="Email" value="@Model?.Email" required />
+	<input type="password" placeholder="PASSWORD" name="Password" required />
+	<input type="hidden" name="ReturnUrl" value="@Context.Request.Query["ReturnUrl"]" />
+	<button type="submit">LOGIN</button>
+</form>

@@ -1,0 +1,32 @@
+﻿@model AssetViewModel
+
+@{
+    ViewData["Title"] = "Asset Details";
+}
+
+<h2>Asset Detail</h2>
+<table class="table tab-content">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <th>Employee Name</th>
+            <td>@Model.Name</td>
+        </tr>
+
+        <tr>
+            <th>SerialNumber</th>
+            <td>@Model.SerialNumber</td>
+        </tr>
+        <tr>
+            <th>PurcaseYear</th>
+            <td>@Model.PurchaseYear</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>@Model.Location</td>
+        </tr>
+    </tbody>
+</table>

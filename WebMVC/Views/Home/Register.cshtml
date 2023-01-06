@@ -1,0 +1,10 @@
+﻿@{
+	ViewData["Title"] = "Register";
+}
+<h1>@ViewData["Title"]</h1>
+<form action="/Home/Register" method="post">
+	@Html.AntiForgeryToken()
+	<input type="email" placeholder="EMAIL" name="Email" value="@Model?.Email" required />
+	<input type="password" placeholder="PASSWORD" name="Password" required />
+	<button type="submit">REGISTER</button>
+</form>

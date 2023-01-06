@@ -1,4 +1,4 @@
-﻿@model StudentViewModel
+﻿@model CustomerViewModel
 @{
     ViewData["Title"] = "Student Edit Data";
 }
@@ -12,8 +12,8 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="StudentName">Student Name</label>
-        <input asp-for="StudentName" class="form-control">
+        <label asp-for="CustomerName">Customer Name</label>
+        <input asp-for="CustomerName" class="form-control">
     </div>
 
     <div class="form-group">
@@ -22,13 +22,13 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Major">Major</label>
-        <input asp-for="Major" class="form-control">
+        <label asp-for="City">City</label>
+        <input asp-for="City" class="form-control">
     </div>
 
     <div class="form-group">
-        <label asp-for="Address">Address</label>
-        <input asp-for="Address" class="form-control">
+        <label asp-for="Country">Country</label>
+        <input asp-for="Country" class="form-control">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>

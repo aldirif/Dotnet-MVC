@@ -1,6 +1,6 @@
-﻿@model List<StudentViewModel>
+﻿@model List<CustomerViewModel>
 @{
-    ViewData["Title"] = "Student List";
+    ViewData["Title"] = "Customers List";
 }
 
 <h2>Student List</h2>
@@ -8,10 +8,10 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>StudentName</th>
+            <th>CutomerName</th>
             <th>Email</th>
-            <th>Major</th>
-            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -20,10 +20,10 @@
         {
             <tr>
                 <td>@item.Id</td>
-                <td>@item.StudentName</td>
+                <td>@item.CustomerName</td>
                 <td>@item.Email</td>
-                <td>@item.Major</td>
-                <td>@item.Address</td>
+                <td>@item.City</td>
+                <td>@item.Country</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success">View</a>

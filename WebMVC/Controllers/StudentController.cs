@@ -9,9 +9,9 @@ namespace WebMvc.Controllers
     {
         private static List<StudentViewModel> _studentViewModels = new List<StudentViewModel>()
         {
-            new StudentViewModel(1, "Aldi Rifaldi", "aldi@gmail.com", "Developer", 2),
-            new StudentViewModel(2, "Cristiano Ronaldo", "ronaldo@gmail.com", "Developer", 4),
-            new StudentViewModel(3, "Neymar Jr", "neymar@gmail.com", "Developer", 5),
+            new StudentViewModel(1, "Aldi Rifaldi", "aldi@gmail.com"),
+            new StudentViewModel(2, "Cristiano Ronaldo", "ronaldo@gmail.com"),
+            new StudentViewModel(3, "Neymar Jr", "neymar@gmail.com"),
         };
         public IActionResult Index()
         {
@@ -24,7 +24,7 @@ namespace WebMvc.Controllers
         }
 
         [HttpPost]
-        public IActionResult Save([Bind("Id, StudentName, Email, Position, Experience")] StudentViewModel student)
+        public IActionResult Save([Bind("Id, StudentName, Email")] StudentViewModel student)
         {
             _studentViewModels.Add(student);
             return Redirect("List");
@@ -41,7 +41,7 @@ namespace WebMvc.Controllers
             return View(student);
         }
 
-        public IActionResult Update(int id, [Bind("Id, StudentName, Email, Position, Experience")] StudentViewModel student)
+        public IActionResult Update(int id, [Bind("Id, StudentName, Email")] StudentViewModel student)
         {
             //hhapus data lama
             StudentViewModel studentOld = _studentViewModels.Find(x => x.Id.Equals(id));

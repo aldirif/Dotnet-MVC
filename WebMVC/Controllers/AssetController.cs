@@ -16,6 +16,18 @@ namespace WebMvc.Controllers
             return View();
         }
 
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Save([Bind("Id, Name, SerialNumber, PurchaseYear, Location")] AssetViewModel asset)
+        {
+            _assetViewModels.Add(asset);
+            return Redirect("List");
+        }
+
         public IActionResult List()
         {
             return View(_assetViewModels);
@@ -47,13 +59,12 @@ namespace WebMvc.Controllers
             return View(asset);
         }
 
-        [HttpDelete]
         public IActionResult Delete(int? id)
         {
             AssetViewModel asset = _assetViewModels.Find(x => x.Id.Equals(id));
             _assetViewModels.Remove(asset);
 
-            return Redirect("List");
+            return Redirect("/Asset/List");
         }
     }
 }

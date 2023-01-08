@@ -60,13 +60,12 @@ namespace WebMvc.Controllers
             return View(student);        
         }
 
-        [HttpDelete]
         public IActionResult Delete(int? id)
         {
             StudentViewModel student = _studentViewModels.Find(x => x.Id.Equals(id));
             _studentViewModels.Remove(student);
 
-            return Redirect("List");
+            return Redirect("/Student/List");
         }
 
     }

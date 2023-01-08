@@ -7,7 +7,6 @@
         public String SerialNumber { get; set; }
         public int PurchaseYear { get; set; }
         public String Location { get; set; }
-
         public AssetViewModel()
         {
 

@@ -7,7 +7,6 @@
         public String Email { get; set; }
         public String Major { get; set; }
         public String Address { get; set; }
-        
         public StudentViewModel()
         {
 

@@ -12,9 +12,22 @@ namespace WebMvc.Controllers
 
         private static List<AbsensiViewModel> _absensiViewModels = new List<AbsensiViewModel>()
         {
-            new AbsensiViewModel(1, 002, new DateTime(2023, 1, 8, 08, 00, 0), new DateTime(2023, 1, 8, 17, 00, 0), "Manchester", "Bootcamp"),
-            new AbsensiViewModel(2, 003, new DateTime(2023, 1, 8, 08, 00, 0), new DateTime(2023, 1, 8, 17, 00, 0), "Manchester", "Bootcamp"),
+            new AbsensiViewModel(1, 1, DateTime.Now, DateTime.Now.AddHours(9), "Manchester", "Bootcamp"),
+            new AbsensiViewModel(2, 2, new DateTime(2023, 1, 8, 08, 00, 0), new DateTime(2023, 1, 8, 17, 00, 0), "Manchester", "Bootcamp"),
+            new AbsensiViewModel(3, 3, new DateTime(2023, 1, 8, 08, 00, 0), new DateTime(2023, 1, 8, 17, 00, 0), "Manchester", "Bootcamp"),
         };
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Save([Bind("Id, EmployeeId, AbsentStartDate, AbsentEndDate, Location, Description")] AbsensiViewModel absensi)
+        {
+            _absensiViewModels.Add(absensi);
+            return Redirect("List");
+        }
 
         public IActionResult List()
         {
@@ -46,12 +59,11 @@ namespace WebMvc.Controllers
             return View(absensi);
         }
 
-        [HttpDelete]
         public IActionResult Delete(int? id)
         {
             AbsensiViewModel absensi = _absensiViewModels.Find(x => x.Id.Equals(id));
             _absensiViewModels.Remove(absensi);
-            return Redirect("List");
+            return Redirect("/Absensi/List");
         }
     }
 }

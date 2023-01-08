@@ -60,13 +60,12 @@ namespace WebMvc.Controllers
             return View(customer);        
         }
 
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int? id)
         {
             CustomerViewModel customer = _customerViewModels.Find(x => x.Id.Equals(id));
             _customerViewModels.Remove(customer);
 
-            return Redirect("List");
+            return Redirect("/Customer/List");
         }
 
     }

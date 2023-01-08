@@ -6,7 +6,6 @@
         public String Name { get; set; }
         public String Category { get; set; }
         public int Price { get; set; }
-
         public ProductViewModel()
         {
 

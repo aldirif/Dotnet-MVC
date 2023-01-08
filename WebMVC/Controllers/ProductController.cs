@@ -74,16 +74,12 @@ namespace WebMvc.Controllers
             return View(product);
         }
 
-        [HttpDelete]
         public IActionResult Delete(int? id)
         {
-            // find data dulu
             ProductViewModel product = _productViewModels.Find(x => x.Id.Equals(id));
-
-            // remove from list
             _productViewModels.Remove(product);
 
-            return Redirect("List");
+            return Redirect("/Product/List");
         }
     }
 }

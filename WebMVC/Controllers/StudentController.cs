@@ -53,18 +53,18 @@ namespace WebMvc.Controllers
 
         public IActionResult Details(int id) 
         {
-            StudentViewModel employee = (
+            StudentViewModel student = (
                 from p in _studentViewModels
                 where p.Id == id
                 select p).SingleOrDefault(new StudentViewModel()); 
-            return View(employee);        
+            return View(student);        
         }
 
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            StudentViewModel employee = _studentViewModels.Find(x => x.Id.Equals(id));
-            _studentViewModels.Remove(employee);
+            StudentViewModel student = _studentViewModels.Find(x => x.Id.Equals(id));
+            _studentViewModels.Remove(student);
 
             return Redirect("List");
         }

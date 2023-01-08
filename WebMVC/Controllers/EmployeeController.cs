@@ -61,7 +61,7 @@ namespace WebMvc.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int? id)
         {
             EmployeeViewModel employee = _employeeViewModels.Find(x => x.Id.Equals(id));
             _employeeViewModels.Remove(employee);

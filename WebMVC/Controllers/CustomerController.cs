@@ -24,7 +24,7 @@ namespace WebMvc.Controllers
         }
 
         [HttpPost]
-        public IActionResult Save([Bind("Id, StudentName, Email, City, Country")] CustomerViewModel customer)
+        public IActionResult Save([Bind("Id, CustomerName, Email, City, Country")] CustomerViewModel customer)
         {
             _customerViewModels.Add(customer);
             return Redirect("List");
@@ -41,7 +41,7 @@ namespace WebMvc.Controllers
             return View(student);
         }
 
-        public IActionResult Update(int id, [Bind("Id, StudentName, Email, City, Country")] CustomerViewModel customer)
+        public IActionResult Update(int id, [Bind("Id, CustomerName, Email, City, Country")] CustomerViewModel customer)
         {
             //hhapus data lama
             CustomerViewModel customerOld = _customerViewModels.Find(x => x.Id.Equals(id));

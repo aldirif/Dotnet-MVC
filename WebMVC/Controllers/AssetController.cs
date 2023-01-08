@@ -5,16 +5,16 @@ namespace WebMvc.Controllers
 {
     public class AssetController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public static List<AssetViewModel> _assetViewModels = new List<AssetViewModel>()
         {
             new AssetViewModel(1,"Asus ROG","66616",2020,"Project"),
             new AssetViewModel(2,"Alienware","66617",2020,"Project"),
         };
+
+        public IActionResult Index()
+        {
+            return View();
+        }
 
         public IActionResult List()
         {

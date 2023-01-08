@@ -50,18 +50,10 @@ namespace WebMvc.Controllers
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
-            try
-            {
-                AssetViewModel asset2 = _assetViewModels.Find(x => x.Id.Equals(id));
+            AssetViewModel asset = _assetViewModels.Find(x => x.Id.Equals(id));
+            _assetViewModels.Remove(asset);
 
-                _assetViewModels.Remove(asset2);
-
-                return Redirect("List");
-            }
-            catch
-            {
-                return BadRequest();
-            }
+            return Redirect("List");
         }
     }
 }

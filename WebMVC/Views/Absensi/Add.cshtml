@@ -1,0 +1,46 @@
+﻿@model AbsensiViewModel
+@{
+    ViewData["Title"] = "Absen View Data";
+}
+
+<h2>Form Add Absen</h2>
+
+<form asp-action="Save" method="post">
+    <div class="form-group">
+        <label asp-for="Id">Id</label>
+        <input asp-for="Id" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmployeeId">Employee Id</label>
+        <input asp-for="EmployeeId" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AbsentStartDate">Absen Start Date</label>
+        <input asp-for="AbsentStartDate" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AbsentEndDate">Absen End Date</label>
+        <input asp-for="AbsentEndDate" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Location">Location</label>
+        <input asp-for="Location" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

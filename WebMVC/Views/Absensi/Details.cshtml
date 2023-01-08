@@ -1,0 +1,36 @@
+﻿@model AbsensiViewModel
+
+@{
+    ViewData["Title"] = "Absen Details";
+}
+
+<h2>Absen Detail</h2>
+<table class="table tab-content">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <th>Employee Id</th>
+            <td>@Model.EmployeeId</td>
+        </tr>
+
+        <tr>
+            <th>AbsenStartDate</th>
+            <td>@Model.AbsentStartDate</td>
+        </tr>
+        <tr>
+            <th>AbsenEndDate</th>
+            <td>@Model.AbsentEndDate</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>@Model.Location</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <th>@Model.Description</th>
+        </tr>
+    </tbody>
+</table>

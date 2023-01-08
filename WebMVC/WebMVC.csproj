@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Models\5qmeflqz.c3m~" />
+  </ItemGroup>
+
 </Project>
